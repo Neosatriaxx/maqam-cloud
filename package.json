@@ -1,0 +1,30 @@
+{
+  "name": "maqam-cloud",
+  "version": "3.0.0",
+  "description": "MAQAM — Mosque Attendance System: lightweight frontend + Vercel serverless AI (face recognition & scene verification) + Supabase database/storage.",
+  "private": true,
+  "engines": {
+    "node": ">=20 <23"
+  },
+  "scripts": {
+    "dev": "vercel dev --listen 3000",
+    "deploy": "vercel --prod",
+    "smoke": "node scripts/smoke-test.mjs",
+    "migrate": "node scripts/migrate.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
+    "@tensorflow/tfjs": "^3.21.0",
+    "@tensorflow/tfjs-backend-wasm": "^3.21.0",
+    "@vladmandic/face-api": "^1.7.15",
+    "bcryptjs": "^2.4.3",
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "vercel": "^41.0.0"
+  },
+  "allowScripts": {
+    "@tensorflow/tfjs-node@4.22.0": true
+  }
+}

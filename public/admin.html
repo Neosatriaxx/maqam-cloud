@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A1526">
+<title>MAQAM · Panel Takmir</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%230A1526'/%3E%3Cg fill='none' stroke='%23D9A94E' stroke-width='2.5'%3E%3Crect x='15' y='15' width='18' height='18'/%3E%3Crect x='15' y='15' width='18' height='18' transform='rotate(45 24 24)'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@400;600;700&family=Amiri&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:fixed" aria-hidden="true">
+  <defs>
+    <clipPath id="archClip" clipPathUnits="objectBoundingBox">
+      <path d="M0,1 L0,0.46 C0,0.18 0.2,0.07 0.465,0.045 L0.5,0.02 L0.535,0.045 C0.8,0.07 1,0.18 1,0.46 L1,1 Z"/>
+    </clipPath>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5.5-8 12-8 12s-8-6.5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-3.7 8-10V5.5L12 2 4 5.5V12c0 6.3 8 10 8 10Z"/><path d="M9 11.5l2 2 4-4.5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/></symbol>
+    <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3Z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0ZM12 9v4M12 17h.01"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+  </defs>
+</svg>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <div class="hdr-brand">
+      <div class="hdr-logos">
+        <img class="hdr-logo" src="/img/logo-akrom.png" alt="Rohis Akromul Hadyan" onerror="this.remove()">
+        <img class="hdr-logo" src="/img/logo-labschool.png" alt="SMA Labschool Jakarta" onerror="this.remove()">
+      </div>
+      <div style="min-width:0">
+        <div class="hdr-name">Panel Takmir</div>
+        <div class="hdr-sub">MAQAM · Absensi Sholat</div>
+      </div>
+    </div>
+    <button class="icon-btn" id="adm-logout" title="Keluar" hidden><svg class="ic"><use href="#i-logout"/></svg></button>
+  </div>
+</header>
+
+<main>
+  <!-- LOGIN -->
+  <div id="login-card" class="login-wrap">
+    <div class="login-logos">
+      <img class="login-logo" src="/img/logo-akrom.png" alt="" onerror="this.remove()">
+      <img class="login-logo" src="/img/logo-labschool.png" alt="" onerror="this.remove()">
+    </div>
+    <h1 class="login-title">Panel Takmir</h1>
+    <div class="login-ar">مَقام</div>
+    <div class="panel" style="text-align:left">
+      <div class="field"><label>Kata sandi takmir</label>
+        <input type="password" id="adl-pass" autocomplete="current-password" placeholder="••••••••"></div>
+      <div class="fmsg" id="adl-err"></div>
+      <button class="btn btn-pri" id="adl-btn" style="width:100%" type="button"><svg class="ic"><use href="#i-shield"/></svg>Masuk</button>
+      <p class="hint" style="margin-top:10px">Kata sandi dibuat saat setup masjid pertama kali.</p>
+    </div>
+  </div>
+
+  <!-- PANEL -->
+  <section id="panel" class="wrap" hidden>
+    <div class="adm-head">
+      <div><h2>Panel Takmir</h2><span id="adm-mosque">&nbsp;</span></div>
+    </div>
+    <div class="tabs">
+      <button class="tab on" data-tab="members" type="button"><svg class="ic"><use href="#i-users"/></svg>Jamaah</button>
+      <button class="tab" data-tab="att" type="button"><svg class="ic"><use href="#i-cal"/></svg>Absensi</button>
+      <button class="tab" data-tab="scene" type="button"><svg class="ic"><use href="#i-cam"/></svg>Tempat</button>
+      <button class="tab" data-tab="set" type="button"><svg class="ic"><use href="#i-sliders"/></svg>Pengaturan</button>
+    </div>
+
+    <div id="tab-members">
+      <div class="toolbar">
+        <div class="search"><svg class="ic"><use href="#i-search"/></svg><input id="m-q" placeholder="Cari nama jamaah…"></div>
+        <span class="cnt" id="m-cnt"></span>
+      </div>
+      <div class="m-grid" id="m-grid"></div>
+    </div>
+
+    <div id="tab-att" hidden>
+      <div class="toolbar">
+        <input type="date" id="a-day">
+        <select id="a-prayer">
+          <option value="">Semua sholat</option>
+          <option>Subuh</option><option>Zuhur</option><option>Ashar</option><option>Maghrib</option><option>Isya</option>
+        </select>
+        <div class="search"><svg class="ic"><use href="#i-search"/></svg><input id="a-q" placeholder="Cari nama…"></div>
+        <span class="cnt" id="a-cnt"></span>
+        <button class="btn btn-line btn-sm" id="a-export" type="button"><svg class="ic"><use href="#i-download"/></svg>CSV</button>
+      </div>
+      <div class="adm-stats" id="a-stats"></div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Waktu</th><th>Nama</th><th>Sholat</th><th>Tempat</th><th>Jarak</th><th></th></tr></thead>
+          <tbody id="a-rows"></tbody>
+        </table>
+      </div>
+      <div class="empty" id="a-empty" hidden><svg class="ic"><use href="#i-cal"/></svg><div>Belum ada catatan absensi untuk filter ini.</div></div>
+    </div>
+
+    <div id="tab-scene" hidden>
+      <div class="panel">
+        <h3>Foto Referensi Mushola</h3>
+        <p class="hint">Unggah 8–20 foto bagian mushola dari sudut yang akan diarahkan kamera jamaah: mimbar, kaligrafi, kubah bagian dalam, ruangan keseluruhan. Ruangan kosong, dengan cahaya seperti saat absensi dipakai. Minimal 3 foto untuk mengaktifkan mode ini.</p>
+        <div class="upl-row">
+          <input type="file" id="sr-file" accept="image/*" multiple hidden>
+          <button class="btn btn-pri btn-sm" id="sr-upl" type="button"><svg class="ic"><use href="#i-cam"/></svg>Pilih &amp; Unggah Referensi</button>
+          <span class="cnt" id="sr-cnt"></span>
+        </div>
+        <div class="ref-grid" id="sr-grid" style="margin-top:10px"></div>
+        <div style="margin-top:10px"><button class="btn btn-danger btn-sm" id="sr-clear" type="button"><svg class="ic"><use href="#i-trash"/></svg>Hapus semua referensi</button></div>
+      </div>
+      <div class="panel">
+        <h3>Foto Blacklist (Non-Mushola)</h3>
+        <p class="hint">Unggah 5–12 foto tempat yang paling mungkin dipakai curang — terutama yang paling mirip mushola: ruang kelas, koridor, lab, aula.</p>
+        <div class="upl-row">
+          <input type="file" id="sb-file" accept="image/*" multiple hidden>
+          <button class="btn btn-line btn-sm" id="sb-upl" type="button"><svg class="ic"><use href="#i-cam"/></svg>Pilih &amp; Unggah Blacklist</button>
+          <span class="cnt" id="sb-cnt"></span>
+        </div>
+        <div class="ref-grid" id="sb-grid" style="margin-top:10px"></div>
+        <div style="margin-top:10px"><button class="btn btn-danger btn-sm" id="sb-clear" type="button"><svg class="ic"><use href="#i-trash"/></svg>Hapus semua blacklist</button></div>
+      </div>
+      <div class="panel">
+        <h3>Kalibrasi &amp; Uji Langsung</h3>
+        <p class="hint">Berdiri di titik tempat jamaah akan absen, arahkan kamera ke mushola, amati skor. Atur slider sampai: mushola LOLOS, ruang kelas TIDAK LOLOS — lalu simpan.</p>
+        <button class="btn btn-pri btn-sm" id="tst-start" type="button"><svg class="ic"><use href="#i-cam"/></svg>Mulai Uji Kamera</button>
+        <div class="test-cam" id="tst-cam" hidden>
+          <canvas id="tst-cv"></canvas>
+          <div class="test-hud">
+            <div id="tst-ref">Mirip mushola: —</div>
+            <div id="tst-blk">Mirip non-mushola: —</div>
+            <div class="test-verdict" id="tst-verdict">—</div>
+          </div>
+        </div>
+        <div class="field" style="margin-top:14px">
+          <label>Ambang kemiripan minimum (mushola)</label>
+          <div class="range-row"><input type="range" id="s-thr" min="50" max="90" step="1"><b id="s-thr-v"></b></div>
+        </div>
+        <div class="field">
+          <label>Margin keamanan vs blacklist</label>
+          <div class="range-row"><input type="range" id="s-mar" min="0" max="20" step="1"><b id="s-mar-v"></b></div>
+        </div>
+        <button class="btn btn-pri btn-sm" id="s-save-scene" type="button"><svg class="ic"><use href="#i-check"/></svg>Simpan Kalibrasi</button>
+        <p class="hint" style="margin-top:8px">Saran mulai: ambang 68%, margin 10%. Naikkan ambang bila ruang kelas ikut lolos; turunkan bila mushola sulit lolos.</p>
+      </div>
+    </div>
+
+    <div id="tab-set" hidden>
+      <div class="panel">
+        <h3>Identitas Masjid</h3>
+        <div class="field"><label>Nama masjid</label><input id="s-name"></div>
+        <button class="btn btn-pri btn-sm" id="s-save-name" type="button"><svg class="ic"><use href="#i-check"/></svg>Simpan</button>
+      </div>
+      <div class="panel">
+        <h3>Area Geofence</h3>
+        <p class="hint">Pusat dan radius area tempat aplikasi dapat diakses jamaah.</p>
+        <div class="two" style="margin-top:10px">
+          <div class="field"><label>Latitude</label><input id="s-lat" type="number" step="any"></div>
+          <div class="field"><label>Longitude</label><input id="s-lng" type="number" step="any"></div>
+        </div>
+        <button class="btn btn-line btn-sm" id="s-gps" type="button"><svg class="ic"><use href="#i-pin"/></svg>Pakai Posisi GPS Sekarang</button>
+        <div class="field">
+          <label>Radius</label>
+          <div class="range-row"><input type="range" id="s-rad" min="30" max="300" step="10"><b id="s-rad-v"></b></div>
+        </div>
+        <button class="btn btn-pri btn-sm" id="s-save-geo" type="button"><svg class="ic"><use href="#i-check"/></svg>Simpan Area</button>
+      </div>
+      <div class="panel">
+        <h3>Kata Sandi Takmir</h3>
+        <div class="field"><label>Sandi lama</label><input id="s-p0" type="password" autocomplete="current-password"></div>
+        <div class="field"><label>Sandi baru</label><input id="s-p1" type="password" autocomplete="new-password"></div>
+        <button class="btn btn-pri btn-sm" id="s-save-pass" type="button"><svg class="ic"><use href="#i-shield"/></svg>Ganti Sandi</button>
+      </div>
+      <div class="panel danger">
+        <h3>Zona Berbahaya</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn-line btn-sm" id="d-clear-att" type="button"><svg class="ic"><use href="#i-trash"/></svg>Hapus Semua Absensi</button>
+          <button class="btn btn-danger btn-sm" id="d-reset" type="button"><svg class="ic"><use href="#i-alert"/></svg>Reset Aplikasi Total</button>
+        </div>
+      </div>
+    </div>
+
+    <p class="foot"><b>SMA Labschool Jakarta</b> × <b>Rohis Akromul Hadyan</b><br>MAQAM — Absensi Sholat Berbasis Wajah</p>
+  </section>
+</main>
+
+<div id="toasts"></div>
+<div id="modal-root"></div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>
