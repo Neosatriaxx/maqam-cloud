@@ -103,7 +103,7 @@ function api(path, opts = {}) {
     })).catch(reject);
   });
 }
-async function loadConfig() { state.cfg = await api('/api/public/config'); }
+async function loadConfig() { state.cfg = await api('/api/public-config'); }
 function geoPayload() {
   const g = state.lastGeo;
   return g ? { lat: g.lat, lng: g.lng, accuracy: state.geoAcc || 15, ts: g.ts } : null;
