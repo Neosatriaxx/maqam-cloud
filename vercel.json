@@ -1,14 +1,8 @@
-{"$schema": "https://openapi.vercel.sh/vercel.json",
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     { "source": "/api/admin/(.*)", "destination": "/api/admin" }
   ],
-  "functions": {
-    "api/*.js": {
-      "includeFiles": "public/models/**",
-      "memory": 1769,
-      "maxDuration": 30
-    }
-  },
   "headers": [
     {
       "source": "/css/(.*)",
